@@ -15,9 +15,9 @@ For bugs/queries/suggestions/thanks feel free to email me at "trapitbansal at gm
 ### Running Demos
 Open Matlab with the current directory as the code directory, make sure Matlab is configured for internet access and type:  
 `demo()`  
-This recovers topics from a specified public corpus using TSVD. This will run a demo on the NIPS corpus.  
+This will run a demo of the algorithm on the NIPS corpus.  
 
-Other available choices for the corpus are the 20-NewsGroup and any corpus on the UCI repository (that is NIPS, ENRON, KOS, NYT, PUBMED).
+This function can recover topics from a specified public corpus using TSVD. Other available choices for the corpus are the 20-NewsGroup and any corpus on the UCI repository (that is NIPS, ENRON, KOS, NYT, PUBMED).
 Specify the corpus name as input variable, the possible values are: "_nips_", "_enron_", "_kos_", "_20NG_" (default is nips).
 The function downloads corresponding data, processes it, runs TSVD and prints the topics.
 If you have problems downloading the data from matlab, create a folder called "*demo_[corpus]*" where *[corpus]* is the corpus name as above and put the unzipped data file and the vocabulary file in that folder. Then call `demo([corpus])`.
