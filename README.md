@@ -1,7 +1,7 @@
-# Thresholded SVD based K-meand for Topic Modeling
+# Thresholded SVD based K-means for Topic Modeling
 
-Code for the paper:
-*"[A provable SVD-based algorithm for learning topics in dominant admixture corpus](http://papers.nips.cc/paper/5302-a-provable-svd-based-algorithm-for-learning-topics-in-dominant-admixture-corpus)". Trapit Bansal, Chiranjib Bhattacharyya, Ravindran Kannan. In Neural Information Processing Systems (NIPS), 2014.*
+Code for the paper:  
+*"[A Provable SVD-based Algorithm for Learning Topics in Dominant Admixture Corpus](http://papers.nips.cc/paper/5302-a-provable-svd-based-algorithm-for-learning-topics-in-dominant-admixture-corpus)". Trapit Bansal, Chiranjib Bhattacharyya, Ravindran Kannan. In Neural Information Processing Systems (NIPS), 2014.*
 ***
 
 This file provides useful information for using the code. 
@@ -13,20 +13,20 @@ For bugs/queries/suggestions/thanks feel free to email me at "trapitbansal at gm
 
 
 ### Running Demos
-The provided matlab function `demo` recovers topics from a specified public corpus using TSVD.  
-Just type `demo()` for a quick demo, ensure that your matlab is _configured for internet access_.
-This will run a demo on the NIPS corpus.  
+Open Matlab with the current directory as the code directory, make sure Matlab is configured for internet access and type:  
+`demo()`  
+This recovers topics from a specified public corpus using TSVD. This will run a demo on the NIPS corpus.  
 
 Other available choices for the corpus are the 20-NewsGroup and any corpus on the UCI repository (that is NIPS, ENRON, KOS, NYT, PUBMED).
 Specify the corpus name as input variable, the possible values are: "_nips_", "_enron_", "_kos_", "_20NG_" (default is nips).
 The function downloads corresponding data, processes it, runs TSVD and prints the topics.
-If you have problems downloading the data from matlab, create a folder called "*demo_<corpus>*" where *<corpus>* is the corpus name as above and put the unzipped data file and the vocabulary file in that folder. Then call `demo(<corpus>)`.
+If you have problems downloading the data from matlab, create a folder called "*demo_[corpus]*" where *[corpus]* is the corpus name as above and put the unzipped data file and the vocabulary file in that folder. Then call `demo([corpus])`.
 The demo script calls the python code to preprocess the data.  
 _Note_: Using "nytimes" or "pubmed" as corpus name is also possible though the datasets are quite big and memory issues may arise, so use these at your own risk (nytimes works with around 4GB memory if you have some small swap space available and close all other running programs, pubmed has not been tested).
 
 
 ### Data Format
-For the TSVD function, input data should be in a text file in matlab sparse matrix format, that is each line of input text file is:
+For the TSVD function, input data should be in a text file in matlab sparse matrix format, that is each line of input text file is:  
 *Doc_id Word_id Count*  
 where Doc_id and Word_id start from 1.  
 The UCI data is in the same format with 3 addtional header-lines at the start which need to be removed.
